@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+SERVICES=("cups-browsed" "cups" "bluetooth" "unattended-upgrades" "whoopsie")
+
+echo "Disabling services:"
+printf "  - %s\n" "${SERVICES[@]}"
+
+# stop then disable each service
+for srv in "${SERVICES[@]}"
+do
+    sudo systemctl stop $srv
+    sudo systemctl disable $srv
+    sudo systemctl mask $srv
+    sudo systemctl daemon-reload
+done
+
+exit 0
