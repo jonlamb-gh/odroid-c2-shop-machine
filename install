@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+SRC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+install -d /usr/local/bin
+install -m 0755 $SRC_DIR/scripts/* /usr/local/bin
+install -m 0755 $SRC_DIR/bin/* /usr/local/bin
+
+install -m 0644 -D $SRC_DIR/configs/sshd_config /etc/ssh/sshd_config
+
+install -m 0644 -o odroid -g odroid -D $SRC_DIR/configs/.bashrc /home/odroid/.bashrc
+
+install -m 0755 -D $SRC_DIR/desktop/openscad.desktop /home/odroid/Desktop/openscad.desktop
+install -m 0755 -D $SRC_DIR/desktop/openscad.desktop /usr/share/applications//openscad.desktop
+
+systemctl restart sshd
+
+update-desktop-database
+
+exit 0

@@ -1,2 +1,4 @@
 # odroid-c2-shop-machine
-TODO
+
+image: `ubuntu64-16.04.3-mate-odroid-c2-20170927.img.xz`
+
