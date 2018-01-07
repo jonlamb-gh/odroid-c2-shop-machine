@@ -1,0 +1,4 @@
+# to enumerate available: pacmd list-sinks | grep -e 'name:' -e 'index'
+default_driver=pulse
+quiet
+id=0

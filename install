@@ -8,7 +8,11 @@ install -m 0755 $SRC_DIR/bin/* /usr/local/bin
 
 install -m 0644 -D $SRC_DIR/configs/sshd_config /etc/ssh/sshd_config
 
-install -m 0644 -o odroid -g odroid -D $SRC_DIR/configs/.bashrc /home/odroid/.bashrc
+install -m 0644 -o odroid -g odroid -D $SRC_DIR/configs/dot_bashrc /home/odroid/.bashrc
+
+install -m 0644 -o odroid -g odroid -D $SRC_DIR/configs/dot_libao /home/odroid/.libao
+
+install -m 0644 -o odroid -g odroid -D $SRC_DIR/configs/pianobar_config /home/odroid/.config/pianobar/config
 
 install -m 0755 -D $SRC_DIR/desktop/openscad.desktop /home/odroid/Desktop/openscad.desktop
 install -m 0755 -D $SRC_DIR/desktop/openscad.desktop /usr/share/applications//openscad.desktop
